@@ -26,9 +26,11 @@ void diffSettings(String input) {
 
 void getRating() {
   print('');
+  sleep(Duration(seconds: 1));
   print('How did you go? Rate yourself out of 3.');
   int? ratingInput = int.parse(stdin.readLineSync()!);
   rating += ratingInput;
+  sleep(Duration(seconds: 1));
   print('Your current score is ${rating}');
   print('');
 }
@@ -44,28 +46,30 @@ void consolePrinter(int number) {
   getRating();
 }
 
-void rewardCeremony(int finalScore) {
-  double average = finalScore / length;
+void rewardCeremony(int fS) {
+  double average = fS / length;
 
   print('Your average was: ${average.toStringAsFixed(1)}');
 
-  if (average >= finalScore * .9) {
+  if (fS == length * length) {
+    print('Your score is 100%!');
+  } else if (fS >= fS * .9 && fS < length * length) {
     print('You placed in the top 90%');
-  } else if (average >= finalScore * .8 && average < finalScore * .9) {
+  } else if (fS >= fS * .8 && fS < fS * .9) {
     print('You placed in the top 80%');
-  } else if (average >= finalScore * .7 && average < finalScore * .8) {
+  } else if (fS >= fS * .7 && fS < fS * .8) {
     print('You placed in the top 70%');
-  } else if (average >= finalScore * .6 && average < finalScore * .7) {
+  } else if (fS >= fS * .6 && fS < fS * .7) {
     print('You placed in the top 60%');
-  } else if (average >= finalScore * .5 && average < finalScore * .6) {
+  } else if (fS >= fS * .5 && fS < fS * .6) {
     print('You placed in the top 50%');
-  } else if (average >= finalScore * .4 && average < finalScore * .5) {
+  } else if (fS >= fS * .4 && fS < fS * .5) {
     print('You placed in the top 40%');
-  } else if (average >= finalScore * .3 && average < finalScore * .4) {
+  } else if (fS >= fS * .3 && fS < fS * .4) {
     print('You placed in the top 30%');
-  } else if (average >= finalScore * .2 && average < finalScore * .3) {
+  } else if (fS >= fS * .2 && fS < fS * .3) {
     print('You placed in the top 20%');
-  } else if (average >= finalScore * .1 && average < finalScore * .2) {
+  } else if (fS >= fS * .1 && fS < fS * .2) {
     print('You placed in the top 10%');
   } else {
     print('It\'s literally like all you did was choose a difficulty.');
